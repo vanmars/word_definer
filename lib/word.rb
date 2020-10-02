@@ -29,6 +29,7 @@ class Word
  
   # Update Word
   def update(name)
+    @name = name 
   end
 
 
