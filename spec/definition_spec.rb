@@ -22,9 +22,19 @@ describe('#Definition') do
     end
   end
 
-  describe('#all') do
+  describe('.all') do
     it('returns a list of all definitions') do
       expect(Definition.all).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it('returns true if two definitions are the same') do
+      definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
+      definition1.save
+      definition2 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
+      definition2.save
+      expect(Definition.all).to(eq([definition1, definition2]))
     end
   end
 
