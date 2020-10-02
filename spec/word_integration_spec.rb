@@ -109,4 +109,16 @@ describe('#app') do
     end
   end
 
+  describe('/words/:id/edit get route', {:type => :feature}) do
+    it('delete definition on word page') do
+      visit('/words')
+      click_on('Add a new word!')
+      fill_in('new_word', :with => 'Vanessa')
+      click_on('Submit')
+      click_on('Vanessa')
+      click_on('Edit word')
+      expect(page).to have_field('edit_word')
+    end
+  end
+
 end
