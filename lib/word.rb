@@ -28,7 +28,7 @@ class Word
   end
  
   # Update Word
-  def update
+  def update(name)
   end
 
 

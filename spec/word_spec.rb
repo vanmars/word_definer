@@ -60,4 +60,13 @@ describe('#Word') do
       expect(Word.find(word1.id)).to(eq(word1))
     end
   end
+
+  describe('#update') do
+    it("updates a word by id") do
+      word1 = Word.new({name: "hello", id: nil})
+      word1.save
+      word1.update("hullo")
+      expect(word1.name).to(eq("hullo"))
+    end
+  end
 end
