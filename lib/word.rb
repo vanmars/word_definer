@@ -45,6 +45,6 @@ class Word
 
   # Find all definitions for a given word
   def definitions
-    
+    Definition.find_by_word(self.id)
   end
 end
