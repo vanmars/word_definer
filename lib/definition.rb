@@ -30,7 +30,7 @@ class Definition
   end
 
   # Update Definition
-  def update
+  def update(name)
   end
 
   # Delete Defintion
