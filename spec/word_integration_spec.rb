@@ -77,4 +77,20 @@ describe('#app') do
       expect(page).to have_field('new_definition')
     end
   end
+
+  describe('/words/:id/definitions/:definition_id patch route', {:type => :feature}) do
+    it('updates definition on word page') do
+      visit('/words')
+      click_on('Add a new word!')
+      fill_in('new_word', :with => 'Vanessa')
+      click_on('Submit')
+      click_on('Vanessa')
+      fill_in('definition_name', :with => 'the greatest of all time')
+      click_on('Add definition')
+      click_on('the greatest of all time')
+      fill_in('new_definition', :with => 'the most talented')
+      click_on('Update Definition')
+      expect(page).to have_link('the most talented')
+    end
+  end
 end
