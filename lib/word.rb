@@ -18,8 +18,6 @@ class Word
     self.name == other_word.name
   end
 
-  
-
   # Read Words
   def self.all
     @@words.values
@@ -39,6 +37,8 @@ class Word
 
   # For Testing
   def self.clear
+    @@words = {}
+    @@total_rows = 0
   end
 
 
