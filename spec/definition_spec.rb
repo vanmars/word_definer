@@ -68,7 +68,7 @@ describe('#Definition') do
       definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
       definition1.save
       definition1.update("the most talented of all time")
-      expect(Definition.find(definition1.name)).to(eq("the most talented of all time"))
+      expect(definition1.name).to(eq("the most talented of all time"))
     end
   end
 end

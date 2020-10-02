@@ -31,6 +31,7 @@ class Definition
 
   # Update Definition
   def update(name)
+    @name = name
   end
 
   # Delete Defintion
