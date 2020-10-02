@@ -49,4 +49,17 @@ describe('#app') do
       expect(page).to have_content('Definition List:')
     end
   end
+
+  describe('/words/:id/definitions post route', {:type => :feature}) do
+    it('posts new definition') do
+      visit('/words')
+      click_on('Add a new word!')
+      fill_in('new_word', :with => 'Vanessa')
+      click_on('Submit')
+      click_on('Vanessa')
+      fill_in('definition_name', :with => 'the greatest of all time')
+      click_on('Add definition')
+      expect(page).to have_link('the greatest of all time')
+    end
+  end
 end
