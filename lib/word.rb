@@ -23,7 +23,7 @@ class Word
     @@words.values
   end
 
-  def self.find
+  def self.find(id)
   end
  
   # Update Word
@@ -40,6 +40,4 @@ class Word
     @@words = {}
     @@total_rows = 0
   end
-
-
 end
