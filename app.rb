@@ -30,3 +30,10 @@ get('/words/:id') do
   @word = Word.find(params[:id].to_i)
   erb(:word)
 end
+
+post('/words/:id/definitions') do
+  @word = Word.find(params[:id].to_i)
+  definition = Definition.new({name: params[:definition_name], id: nil, word_id: @word.id})
+  definition.save
+  erb(:word)
+end
