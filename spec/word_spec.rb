@@ -1,5 +1,6 @@
 require('rspec')
 require('word')
+require('definition')
 
 describe('#Word') do
 
@@ -80,4 +81,16 @@ describe('#Word') do
       expect(Word.all).to(eq([word2]))
     end
   end
+
+  describe('#definitions') do
+    it('finds the definitions associated with the word') do
+      word = Word.new({name: "Vanessa", id: nil})
+      definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: word.id})
+      definition1.save
+      definition2 = Definition.new({name: "the most talented of all time", id: nil, word_id: word.id})
+      definition2.save
+      expect(word.definitions).to(eq([definition1, definition2]))
+    end
+  end
+
 end
