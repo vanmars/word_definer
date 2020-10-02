@@ -36,6 +36,7 @@ class Definition
 
   # Delete Defintion
   def delete 
+    @@definitions.delete(self.id)
   end
 
   # For Testing
