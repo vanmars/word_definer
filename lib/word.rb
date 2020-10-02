@@ -42,4 +42,9 @@ class Word
     @@words = {}
     @@total_rows = 0
   end
+
+  # Find all definitions for a given word
+  def definitions
+    
+  end
 end
