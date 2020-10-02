@@ -21,4 +21,11 @@ describe('#app') do
       expect(page).to have_content('Welcome, Word Lover!')
     end
   end
+
+  describe('/words/new route', {:type => :feature}) do
+    it('creates a splash page') do
+      visit('/words/new')
+      expect(page).to have_field('new_word')
+    end
+  end
 end
