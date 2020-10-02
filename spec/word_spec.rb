@@ -5,7 +5,8 @@ require('definition')
 describe('#Word') do
 
   before(:each) do
-    Word.clear()
+    Word.clear
+    Definition.clear
   end
 
   describe('#id') do
