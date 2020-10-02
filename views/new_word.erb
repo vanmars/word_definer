@@ -1,9 +1,17 @@
-<h1>Add a New Word!</h1>
-
-<form action="/words" method="post">
-  <div class="form-group">
-    <label for="new_word">New Word</label>
-    <input id="new_word" name="new_word" class="form-control" type="text">
+<div class="center">
+  <br>
+  <h1 class="text-white display-4">Add a New Word!</h1>
+  <div class="card shadow bg-light w-50">
+    <div class="card-body">
+      <div class="card-title">
+        <form action="/words" method="post">
+          <div class="form-group">
+            <label for="new_word" class="card-text">New Word</label>
+            <input id="new_word" name="new_word" class="form-control" type="text">
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+    </div>
   </div>
-  <button type="submit" class="btn">Submit</button>
-</form>
+</div>

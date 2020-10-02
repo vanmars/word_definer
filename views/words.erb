@@ -4,14 +4,14 @@
 </div>
 <hr>
 <div class="row">
-  <div class ="col-sm">
-    <div class="card shadow text-center bg-dark text-white">
+  <div class ="col-sm-8">
+    <div class="card shadow bg-light text-grey">
       <div class="card-body">
         <h3 class="card-title">Your Word Collection</h3>
         <% if @words.any? %>
           <ul>
             <% @words.each do |word| %>
-              <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
+              <li><a style="color:grey" href="/words/<%= word.id %>"><%= word.name %></a></li>
             <% end %>
           </ul>
         <% else %>
@@ -20,11 +20,13 @@
       </div>
     </div>
   </div>
-  <div class ="col-sm">
-    <div class="card shadow text-center bg-dark">
+  <div class ="col-sm-4">
+    <div class="card shadow text-center bg-light">
       <div class="card-body">
         <%# <button class="btn btn-light"><a href="/words/new">Add a new word!</a></button> %>
-        <a style="color:white" href="/words/new">Click here to add a new word!</a>
+        <a style="color:grey" href="/words/new">Click here to add a new word!</a>
+      </div>
+    </div>
   </div>
 </div>
 <nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
