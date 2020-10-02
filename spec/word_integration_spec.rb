@@ -38,4 +38,15 @@ describe('#app') do
       expect(page).to have_link('Vanessa')
     end
   end
+
+  describe('/words/:id get route', {:type => :feature}) do
+    it('creates path to individual words') do
+      visit('/words')
+      click_on('Add a new word!')
+      fill_in('new_word', :with => 'Vanessa')
+      click_on('Submit')
+      click_on('Vanessa')
+      expect(page).to have_content('Definition List:')
+    end
+  end
 end
