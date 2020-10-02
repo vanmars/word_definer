@@ -11,4 +11,33 @@ class Definition
     @word_id = attributes.fetch(:word_id)
   end
 
+  # Create Definition
+  def ==(other_definition)
+  end
+
+  def save
+  end
+
+  # Read Definition
+  def self.all
+  end
+
+  def self.find
+  end
+
+  # Update Definition
+  def update
+  end
+
+  # Delete Defintion
+  def delete 
+  end
+
+  # For Testing
+  def self.clear
+  end
+
+  # Find Word
+  def word
+  end
 end

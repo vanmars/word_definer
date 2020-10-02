@@ -14,4 +14,14 @@ describe('#Definition') do
     end
   end
 
+  describe('#==') do
+    it('returns true if two definitions are the same') do
+      definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
+      definition2 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
+      expect(definition1).to(eq(definition2))
+    end
+  end
+
+
+
 end
