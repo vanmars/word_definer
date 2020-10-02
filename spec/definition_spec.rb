@@ -4,6 +4,10 @@ require('word')
 
 describe('#Definition') do
 
+  before(:each) do
+    Definition.clear
+  end
+
   describe('#initialize') do
     it('returns attributes of an initialized definition object') do
       word = Word.new({name: "Vanessa", id: 2})
@@ -29,7 +33,7 @@ describe('#Definition') do
   end
 
   describe('#save') do
-    it('returns true if two definitions are the same') do
+    it('saves definitions to @@definitions hash') do
       definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
       definition1.save
       definition2 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
@@ -38,5 +42,15 @@ describe('#Definition') do
     end
   end
 
+  describe('.clear') do
+    it('clears the @@definitions hash') do
+      definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
+      definition1.save
+      definition2 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
+      definition2.save
+      Definition.clear
+      expect(Definition.all).to(eq([]))
+    end
+  end
 
 end
