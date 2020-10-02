@@ -31,6 +31,23 @@ get('/words/:id') do
   erb(:word)
 end
 
+get('/words/:id/edit') do
+  @word = Word.find(params[:id].to_i)
+  erb(:word_edit)
+end
+
+# patch('/words/:id') do
+#   erb(:words)
+# end
+
+# delete('/words/:id') do
+#   erb(:words)
+# end
+
+
+
+
+
 post('/words/:id/definitions') do
   @word = Word.find(params[:id].to_i)
   definition = Definition.new({name: params[:definition_name], id: nil, word_id: @word.id})
