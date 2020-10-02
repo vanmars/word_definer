@@ -37,3 +37,8 @@ post('/words/:id/definitions') do
   definition.save
   erb(:word)
 end
+
+get('/words/:id/definitions/:definition_id') do
+  @definition = Definition.find(params[:definition_id].to_i)
+  erb(:definition)
+end
