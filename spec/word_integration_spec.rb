@@ -110,7 +110,7 @@ describe('#app') do
   end
 
   describe('/words/:id/edit get route', {:type => :feature}) do
-    it('delete definition on word page') do
+    it('create path to edit word form') do
       visit('/words')
       click_on('Add a new word!')
       fill_in('new_word', :with => 'Vanessa')
@@ -118,6 +118,20 @@ describe('#app') do
       click_on('Vanessa')
       click_on('Edit word')
       expect(page).to have_field('edit_word')
+    end
+  end
+
+  describe('/words/:id patch route', {:type => :feature}) do
+    it('update word on word page') do
+      visit('/words')
+      click_on('Add a new word!')
+      fill_in('new_word', :with => 'Vanessa')
+      click_on('Submit')
+      click_on('Vanessa')
+      click_on('Edit word')
+      fill_in('edit_word', :with => 'Lindsay')
+      click_on('Update Word')
+      expect(page).to have_content('Lindsay')
     end
   end
 
