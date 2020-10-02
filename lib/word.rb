@@ -10,11 +10,15 @@ class Word
   end
 
   # Create Word
-  def ==(other_word)
+  def save
+    @@words[self.id] = Word.new({name: self.name, id: self.id})
   end
 
-  def save
+  def ==(other_word)
+    self.name == other_word.name
   end
+
+  
 
   # Read Words
   def self.all
