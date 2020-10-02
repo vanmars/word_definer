@@ -90,8 +90,21 @@ describe('#Definition') do
     it('finds the word associated with the defintion') do
       definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: @word.id})
       definition1.save
-      definition1.delete
+      definition2 = Definition.new({name: "the most talented of all time", id: nil, word_id: @word.id})
+      definition2.save
       expect(definition1.word).to(eq(@word))
+      expect(definition2.word).to(eq(@word))
     end
   end
+
+  describe('.find_by_word') do
+    it('finds the definitions associated with a given word') do
+      definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: @word.id})
+      definition1.save
+      definition2 = Definition.new({name: "the most talented of all time", id: nil, word_id: @word.id})
+      definition2.save
+      expect(Definition.find_by_word(@word.id)).to(eq([definition1, definition2]))
+    end
+  end
+
 end

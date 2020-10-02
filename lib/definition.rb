@@ -50,4 +50,9 @@ class Definition
   def word
     Word.find(self.word_id)
   end
+
+  # Find Definitions for Given Word
+  def self.find_by_word(word_id)
+  end
+  
 end
