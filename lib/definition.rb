@@ -45,7 +45,7 @@ class Definition
     
   end
 
-  # Find Word
+  # Find Word for Given Definition
   def word
   end
 end

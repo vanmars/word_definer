@@ -71,4 +71,14 @@ describe('#Definition') do
       expect(definition1.name).to(eq("the most talented of all time"))
     end
   end
+  describe('#delete') do
+    it('deletes a single defintion') do
+      definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
+      definition1.save
+      definition2 = Definition.new({name: "the most talented of all time", id: nil, word_id: 1})
+      definition2.save
+      definition1.delete
+      expect(Definition.all).to(eq([definition2]))
+    end
+  end
 end
