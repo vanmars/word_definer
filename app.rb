@@ -42,3 +42,11 @@ get('/words/:id/definitions/:definition_id') do
   @definition = Definition.find(params[:definition_id].to_i)
   erb(:definition)
 end
+
+patch('/words/:id/definitions/:definition_id') do
+  definition = Definition.find(params[:definition_id].to_i)
+  new_definition_name = params[:new_definition]
+  definition.update(new_definition_name)
+  @word = Word.find(params[:id].to_i)
+  erb(:word)
+end
