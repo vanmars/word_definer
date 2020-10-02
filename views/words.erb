@@ -1,14 +1,32 @@
-<h1>Welcome, Word Lover!<h1>
-
-<h6>Your Word Jar</h6>
-<% if @words.any? %>
-  <ul>
-    <% @words.each do |word| %>
-      <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are currently no words to display.</p>
-<% end %>
-
-<a href="/words/new">Add a new word!</a>
+<br>
+<div class="text-center">
+  <h1 class="text-white display-4">Welcome, Word Lover!<h1>
+</div>
+<hr>
+<div class="row">
+  <div class ="col-sm">
+    <div class="card shadow text-center bg-dark text-white">
+      <div class="card-body">
+        <h3 class="card-title">Your Word Collection</h3>
+        <% if @words.any? %>
+          <ul>
+            <% @words.each do |word| %>
+              <li><a href="/words/<%= word.id %>"><%= word.name %></a></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>There are currently no words to display.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class ="col-sm">
+    <div class="card shadow text-center bg-dark">
+      <div class="card-body">
+        <%# <button class="btn btn-light"><a href="/words/new">Add a new word!</a></button> %>
+        <a style="color:white" href="/words/new">Click here to add a new word!</a>
+  </div>
+</div>
+<nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
+  <span class="navbar-text"><em>The limits of my language are the limits of my universe.</em> - Goethe</span>
+</nav>

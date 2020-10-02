@@ -33,7 +33,7 @@ describe('#app') do
   describe('/words/ post route', {:type => :feature}) do
     it('appends newly created word to /words page') do
       visit('/words')
-      click_on('Add a new word!')
+      click_on('Click here to add a new word!')
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       expect(page).to have_link('Vanessa')
@@ -43,7 +43,7 @@ describe('#app') do
   describe('/words/:id get route', {:type => :feature}) do
     it('creates path to individual words') do
       visit('/words')
-      click_on('Add a new word!')
+      click_on('Click here to add a new word!')
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       click_on('Vanessa')
@@ -54,7 +54,7 @@ describe('#app') do
   describe('/words/:id/definitions post route', {:type => :feature}) do
     it('posts new definition') do
       visit('/words')
-      click_on('Add a new word!')
+      click_on('Click here to add a new word!')
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       click_on('Vanessa')
@@ -67,7 +67,7 @@ describe('#app') do
   describe('/words/:id/definitions/:definition_id get route', {:type => :feature}) do
     it('creates path to definition page') do
       visit('/words')
-      click_on('Add a new word!')
+      click_on('Click here to add a new word!')
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       click_on('Vanessa')
@@ -81,7 +81,7 @@ describe('#app') do
   describe('/words/:id/definitions/:definition_id patch route', {:type => :feature}) do
     it('updates definition on word page') do
       visit('/words')
-      click_on('Add a new word!')
+      click_on('Click here to add a new word!')
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       click_on('Vanessa')
@@ -97,7 +97,7 @@ describe('#app') do
   describe('/words/:id/definitions/:definition_id delete route', {:type => :feature}) do
     it('delete definition on word page') do
       visit('/words')
-      click_on('Add a new word!')
+      click_on('Click here to add a new word!')
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       click_on('Vanessa')
@@ -112,7 +112,7 @@ describe('#app') do
   describe('/words/:id/edit get route', {:type => :feature}) do
     it('create path to edit word form') do
       visit('/words')
-      click_on('Add a new word!')
+      click_on('Click here to add a new word!')
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       click_on('Vanessa')
@@ -124,7 +124,7 @@ describe('#app') do
   describe('/words/:id patch route', {:type => :feature}) do
     it('update word on word page') do
       visit('/words')
-      click_on('Add a new word!')
+      click_on('Click here to add a new word!')
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       click_on('Vanessa')
@@ -138,7 +138,7 @@ describe('#app') do
   describe('/words/:id delete route', {:type => :feature}) do
     it('delets word on words page') do
       visit('/words')
-      click_on('Add a new word!')
+      click_on('Click here to add a new word!')
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       click_on('Vanessa')
