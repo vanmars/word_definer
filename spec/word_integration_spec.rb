@@ -23,9 +23,19 @@ describe('#app') do
   end
 
   describe('/words/new route', {:type => :feature}) do
-    it('creates a splash page') do
+    it('creates a form page for adding a new word') do
       visit('/words/new')
       expect(page).to have_field('new_word')
+    end
+  end
+
+  describe('/words/ post route', {:type => :feature}) do
+    it('appends newly created word to /words page') do
+      visit('/words')
+      click_on('Add a new word!')
+      fill_in('new_word', :with => 'Vanessa')
+      click_on('Submit')
+      expect(page).to have_link('Vanessa')
     end
   end
 end
