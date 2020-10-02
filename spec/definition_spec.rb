@@ -53,4 +53,13 @@ describe('#Definition') do
     end
   end
 
+  describe('.find') do
+    it('finds the correct definition in the @@definitions hash') do
+      definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
+      definition1.save
+      definition2 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
+      definition2.save
+      expect(Definition.find(definition1.id)).to(eq(definition1))
+    end
+  end
 end

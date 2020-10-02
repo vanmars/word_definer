@@ -25,7 +25,7 @@ class Definition
     @@definitions.values
   end
 
-  def self.find
+  def self.find(id)
   end
 
   # Update Definition
