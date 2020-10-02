@@ -1,19 +1,40 @@
-<h2>Definition: <%= @definition.name %></h2>
-<h3>Word: <%= @definition.word.name %></h3>
-
-<form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
-  <input name="_method" type="hidden" value="patch">
-
-  <label for="new_definition">Edit Definition</label>
-  <input id="new_definition" name="new_definition" type="text">
-
-  <button type="submit">Update Definition</button>
-</form>
-
-<form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
-  <input name="_method" type="hidden" value="delete">
-
-  <button type="submit">Delete Definition</button>
-</form>
-
-<a href="/words/<%= @definition.word.id %>">Back to <%= @definition.word.name %></a>
+<br>
+<div class="row w-100">
+  <div class="col-sm-8">
+    <div class="card" style="background-color: rgba(0, 0, 0, 0.03)">
+      <div class="card-body text-white">
+        <h2 class="card-title">Definition:<span style="color:#f08a16"> <%= @definition.name %></span></h2>
+        <h3 class="card-text">Word:<span style="color:#7771e3"> <%= @definition.word.name %></span></h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+  <br>
+  <br>
+    <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
+      <input name="_method" type="hidden" value="delete">
+      <button type="submit" class="btn btn-danger">Delete Definition</button>
+    </form>
+  </div>
+</div>
+<hr>
+<br>
+<div class="row w-100">
+  <div class="col-sm-8">
+    <div class="card shadow bg-light">
+      <div class="card-body">
+        <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
+          <input name="_method" type="hidden" value="patch">
+          <label for="new_definition">Edit Definition:</label>
+          <input id="new_definition" name="new_definition" type="text" class="form-control">
+          <br>
+          <button type="submit" class="btn border-dark" style="background-color:#7771e3"">Update Definition</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
+  <span class="navbar-text"><em>The limits of my language are the limits of my universe.</em> - Goethe</span>
+  <a style="color:#f08a16" href="/words/<%= @definition.word.id %>">Back to <%= @definition.word.name %></a>
+</nav>
