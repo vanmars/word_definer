@@ -6,6 +6,7 @@ set(:show_exceptions, false)
 describe('#app') do
   before(:each) do
     Word.clear
+    Definition.clear
   end
 
   describe('/ route', {:type => :feature}) do
@@ -60,6 +61,20 @@ describe('#app') do
       fill_in('definition_name', :with => 'the greatest of all time')
       click_on('Add definition')
       expect(page).to have_link('the greatest of all time')
+    end
+  end
+
+  describe('/words/:id/definitions/:definition_id get route', {:type => :feature}) do
+    it('creates path to definition page') do
+      visit('/words')
+      click_on('Add a new word!')
+      fill_in('new_word', :with => 'Vanessa')
+      click_on('Submit')
+      click_on('Vanessa')
+      fill_in('definition_name', :with => 'the greatest of all time')
+      click_on('Add definition')
+      click_on('the greatest of all time')
+      expect(page).to have_field('new_definition')
     end
   end
 end
