@@ -48,5 +48,6 @@ class Definition
 
   # Find Word for Given Definition
   def word
+    Word.find(self.word_id)
   end
 end
