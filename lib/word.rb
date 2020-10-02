@@ -18,6 +18,7 @@ class Word
 
   # Read Words
   def self.all
+    @@words.values
   end
 
   def self.find
