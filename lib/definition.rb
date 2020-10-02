@@ -21,6 +21,7 @@ class Definition
 
   # Read Definition
   def self.all
+    @@definitions.values
   end
 
   def self.find
