@@ -6,6 +6,9 @@ describe('#Definition') do
 
   before(:each) do
     Definition.clear
+    Word.clear
+    @word = Word.new({name: "Vanessa", id: nil})
+    @word.save
   end
 
   describe('#initialize') do
@@ -71,6 +74,7 @@ describe('#Definition') do
       expect(definition1.name).to(eq("the most talented of all time"))
     end
   end
+
   describe('#delete') do
     it('deletes a single defintion') do
       definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: 1})
@@ -79,6 +83,15 @@ describe('#Definition') do
       definition2.save
       definition1.delete
       expect(Definition.all).to(eq([definition2]))
+    end
+  end
+
+  describe('#word') do
+    it('finds the word associated with the defintion') do
+      definition1 = Definition.new({name: "the greatest of all time", id: nil, word_id: @word.id})
+      definition1.save
+      definition1.delete
+      expect(definition1.word).to(eq(@word))
     end
   end
 end
