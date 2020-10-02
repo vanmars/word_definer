@@ -93,4 +93,20 @@ describe('#app') do
       expect(page).to have_link('the most talented')
     end
   end
+
+  describe('/words/:id/definitions/:definition_id delete route', {:type => :feature}) do
+    it('delete definition on word page') do
+      visit('/words')
+      click_on('Add a new word!')
+      fill_in('new_word', :with => 'Vanessa')
+      click_on('Submit')
+      click_on('Vanessa')
+      fill_in('definition_name', :with => 'the greatest of all time')
+      click_on('Add definition')
+      click_on('the greatest of all time')
+      click_on('Delete Definition')
+      expect(page).to have_no_link('the greatest of all time')
+    end
+  end
+
 end
