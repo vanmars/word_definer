@@ -38,6 +38,9 @@ class Definition
 
   # For Testing
   def self.clear
+    @@definitions = {}
+    @@total_rows = 0
+    
   end
 
   # Find Word
