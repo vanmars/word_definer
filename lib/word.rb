@@ -32,9 +32,9 @@ class Word
     @name = name 
   end
 
-
   # Delete Word
   def delete
+    @@words.delete(self.id)
   end
 
   # For Testing
