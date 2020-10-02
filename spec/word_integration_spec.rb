@@ -135,4 +135,17 @@ describe('#app') do
     end
   end
 
+  describe('/words/:id delete route', {:type => :feature}) do
+    it('delets word on words page') do
+      visit('/words')
+      click_on('Add a new word!')
+      fill_in('new_word', :with => 'Vanessa')
+      click_on('Submit')
+      click_on('Vanessa')
+      click_on('Edit word')
+      click_on('Delete Word')
+      expect(page).to have_no_link('Vanessa')
+    end
+  end
+
 end
