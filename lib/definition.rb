@@ -13,6 +13,7 @@ class Definition
 
   # Create Definition
   def ==(other_definition)
+    self.name == other_definition.name && self.word_id == other_definition.word_id
   end
 
   def save
