@@ -42,13 +42,12 @@ patch('/words/:id') do
   erb(:word)
 end
 
-# delete('/words/:id') do
-#   erb(:words)
-# end
-
-
-
-
+delete('/words/:id') do
+  @word = Word.find(params[:id].to_i)
+  @word.delete
+  @words = Word.all
+  erb(:words)
+end
 
 post('/words/:id/definitions') do
   @word = Word.find(params[:id].to_i)
