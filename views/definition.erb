@@ -1,26 +1,14 @@
 <br>
 <div class="row w-100">
-  <div class="col-sm-8">
-    <div class="card" style="background-color: rgba(0, 0, 0, 0.03)">
-      <div class="card-body text-white">
-        <h2 class="card-title">Definition:<span style="color:#f08a16"> <%= @definition.name %></span></h2>
-        <h3 class="card-text">Word:<span style="color:#7771e3"> <%= @definition.word.name %></span></h3>
+  <div class="col-sm-7">
+    <div class="card bg-light" style="background-color: rgba(0, 0, 0, 0.03)">
+      <div class="card-body text-black">
+        <h2 class="card-title">Definition:<span style="color:#7771e3"> <%= @definition.name %></span></h2><br>
+        <h4 class="card-text">Word:<span style="color:#f08a16"> <%= @definition.word.name %></span></h4><br>
       </div>
     </div>
   </div>
-  <div class="col-sm-4">
-  <br>
-  <br>
-    <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
-      <input name="_method" type="hidden" value="delete">
-      <button type="submit" class="btn btn-danger">Delete Definition</button>
-    </form>
-  </div>
-</div>
-<hr>
-<br>
-<div class="row w-100">
-  <div class="col-sm-8">
+  <div class="col-sm-5">
     <div class="card shadow bg-light">
       <div class="card-body">
         <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
@@ -28,13 +16,23 @@
           <label for="new_definition">Edit Definition:</label>
           <input id="new_definition" name="new_definition" type="text" class="form-control">
           <br>
-          <button type="submit" class="btn border-dark" style="background-color:#7771e3"">Update Definition</button>
+          <button type="submit" class="btn" style="background-color:#7771e3">Update Definition</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+<hr>
+<div class="col-sm-6 justify-content-center">
+    <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
+      <input name="_method" type="hidden" value="delete">
+      <button type="submit" class="btn btn-danger">Delete Definition</button>
+    </form>
+  </div>
+<br>
+<div class="row w-100">
+</div>
 <nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
-  <span class="navbar-text"><em>The limits of my language are the limits of my universe.</em> - Goethe</span>
+  <span class="navbar-text" style="color:#7771e3"><em>Few activities are as delightful as learning new vocabulary.</em> - Gunn</span>
   <a style="color:#f08a16" href="/words/<%= @definition.word.id %>">Back to <%= @definition.word.name %></a>
 </nav>

@@ -47,7 +47,7 @@ describe('#app') do
       fill_in('new_word', :with => 'Vanessa')
       click_on('Submit')
       click_on('Vanessa')
-      expect(page).to have_content('Definition List:')
+      expect(page).to have_content('Definition List')
     end
   end
 

@@ -1,17 +1,20 @@
-<div class="center">
+<div class="center-align">
   <br>
   <h1 class="text-white display-4">Add a New Word!</h1>
+  <br>
   <div class="card shadow bg-light w-50">
     <div class="card-body">
-      <div class="card-title">
-        <form action="/words" method="post">
-          <div class="form-group">
-            <label for="new_word" class="card-text">New Word</label>
-            <input id="new_word" name="new_word" class="form-control" type="text">
-          </div>
-          <button type="submit" class="btn">Submit</button>
-        </form>
-      </div>
+      <form action="/words" method="post">
+        <div class="form-group">
+          <label for="new_word" class="card-text">New Word</label>
+          <input id="new_word" name="new_word" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn" style="background-color:#7771e3">Submit</button>
+      </form>
     </div>
   </div>
 </div>
+<nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
+  <span class="navbar-text" style="color:#7771e3"><em>I collect words--they are sweets in the mouth of sound.</em> - Gardner</span>
+  <a style="color:#f08a16" href="/words">Return to word list</a>
+</nav>

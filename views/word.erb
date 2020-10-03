@@ -1,26 +1,56 @@
-<h2>Word: <%= @word.name%></h2>
-
-<h4>Definition List:<h4>
-
-  <% if @word.definitions %>
-    <ul>
-      <% @word.definitions.each do |definition| %>
-        <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.name %></a></li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p>There are no definitions listed for this word yet.</p>
-  <% end %>
-
-<h4>Add a Definition:</h4>
-
-<form action="/words/<%= @word.id %>/definitions" method="post">
-  <div class="form-group">
-    <label for="definition_name">Definition</label>
-    <input id="definition_name" name="definition_name" class="form-control" type="text">
+<br>
+<div class="row">
+  <div class="col-sm-9">
+    <div class="card text-center" style="background-color: #7771e3">
+      <div class="card-body text-white">
+        <h1 class="card-title"><span style="color:#f08a16"> <%= @word.name %></span></h1>
+      </div>
+    </div>
   </div>
-  <button type="submit" class="btn">Add definition</button>
-</form>
+  <div class="col-sm-3">
+    <div class="card text-center" style="background-color:#f08a16 ">
+      <div class="card-body">
+        <h4 class="card-title border-rounded"><a style="color:#7771e3" href="/words/<%= @word.id %>/edit">Edit word</a></h4>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-9">
+    <div class="card shadow bg-light">
+      <div class="card-body">
+        <h4>Definition List<h4>
+        <% if @word.definitions %>
+          <ul>
+            <% @word.definitions.each do |definition| %>
+              <li><a style="color:#7771e3" href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.name %></a></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>There are no definitions listed for this word yet.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="card shadow bg-light">
+      <div class="card-body">
+        <h4>Add a Definition</h4>
+        <form action="/words/<%= @word.id %>/definitions" method="post">
+          <div class="form-group">
+            <label for="definition_name">Definition:</label>
+            <input id="definition_name" name="definition_name" class="form-control" type="text">
+          </div>
+          <button type="submit" class="btn text-white" style="background-color:#7771e3">Add definition</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
 
-<p><a href="/words/<%= @word.id %>/edit">Edit word</a></p>
-<a href="/words">Return to word list</a>
+<nav class="navbar fixed-bottom navbar-dark bg-dark text-center">
+  <span class="navbar-text" style="color:#7771e3"><em>The words you speak become the house you live in.</em> - Hafiz</span>
+  <a style="color:#f08a16" href="/words">Return to word list</a>
+</nav>
