@@ -15,6 +15,7 @@ _The concept for the website is to make learning fun: children will write up a l
 _Make an application that contains a Word class. The homepage of the app should list all words. When a word is clicked, it should lead to a page with the word's definitions. Children should be able to add a word, and when viewing a word, be able to add, update or delete one or more definitions. This week you should deploy your application to Heroku so the kids can try it out!_
 
 ## Specifications
+
 | Spec     | Behavior |
 | -------- | -------- | 
 | 1 | Homepage allows user to see list of all words.  |
@@ -27,6 +28,7 @@ _Make an application that contains a Word class. The homepage of the app should 
 | 7 | On the word's page, the user is able to delete one or more definitions. |
 
 ## Backend Logic for Words
+
 | CRUD Action | Route | Method | Description |
 | ------------| ----- | ------ | ----------- |
 | GET | /words | READ | Get a list of words. |
@@ -37,8 +39,8 @@ _Make an application that contains a Word class. The homepage of the app should 
 | PATCH | /words/:id | UPDATE | Update a single word. |
 | DELETE | /words/:id | DELETE| Delete a single word from the list of words. |
 
-
 ## Backend Logic for Definitions
+
 | CRUD Action | Route | Method | Description |
 | ------------| ----- | ------ | ----------- |
 | GET | /words/:id/definitions | READ | Get a list of all the definitions of a word. |
@@ -48,7 +50,10 @@ _Make an application that contains a Word class. The homepage of the app should 
 | DELETE | /words/:id/definitions/:definitions_id | DELETE | Delete a single definition from a word. |
 
 ## Setup/Installation Requirements
+To view this project:
+- Open a browswer of your choice, and navigate to the following url: https://radiant-taiga-43937.herokuapp.com/
 
+To clone and extend this project:
 - Navigate to the directory on your local computer where you would like to clone this repo.
 - Clone this repo using the 'git clone https://github.com/vanmars/word_definer.git' command in terminal/command line.
 - Navigate to the cloned folder and run 'bundle' in your command line to download all dependencies.
@@ -67,7 +72,8 @@ _Connect with me at vamariestewart@gmail.com with ideas to improve this project.
 ## Technologies Used
 
 * HTML
-* CSS/Bootstrap
+* CSS
+* Bootstrap
 * Ruby
 * Ruby Gems: Pry, RSpec, Sinatra, Sintara-Contrib, Capybara
 
