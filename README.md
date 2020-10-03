@@ -1,4 +1,4 @@
-# _Word Definer_
+# :books: _Word Definer_
 
 _2 October 2020_
 
@@ -50,16 +50,16 @@ _Make an application that contains a Word class. The homepage of the app should 
 | DELETE | /words/:id/definitions/:definitions_id | DELETE | Delete a single definition from a word. |
 
 ## Setup/Installation Requirements
-To view this project:
-- Open a browswer of your choice, and navigate to the following url: https://radiant-taiga-43937.herokuapp.com/
+To view this project on Heroku:
+[Click here!](https://radiant-taiga-43937.herokuapp.com/)
 
 To clone and extend this project:
 - Navigate to the directory on your local computer where you would like to clone this repo.
-- Clone this repo using the 'git clone https://github.com/vanmars/word_definer.git' command in terminal/command line.
-- Navigate to the cloned folder and run 'bundle' in your command line to download all dependencies.
+- Clone this repo using the `git clone https://github.com/vanmars/word_definer.git` command in terminal/command line.
+- Navigate to the cloned folder and run `bundle` in your command line to download all dependencies.
 - Open the cloned repo in a text editor of your choice.
-- **To Run Tests**: While in the root directory of this project, run 'rspec' in your command line.
-- **To Run the App in Browser**: While in the root directory of the project, run 'ruby app.rb' in the terminal. This will start a server, which you can access by entering 'localhost:4567' in your browser.
+- **To Run Tests**: While in the root directory of this project, run `rspec` in your command line.
+- **To Run the App in Browser**: While in the root directory of the project, run `ruby app.rb` in the terminal. This will start a server, which you can access by entering `localhost:4567` in your browser.
 
 ## Known Bugs
 
@@ -71,11 +71,10 @@ _Connect with me at vamariestewart@gmail.com with ideas to improve this project.
 
 ## Technologies Used
 
-* HTML
-* CSS
-* Bootstrap
 * Ruby
 * Ruby Gems: Pry, RSpec, Sinatra, Sintara-Contrib, Capybara
+* HTML
+* CSS / Bootstrap
 
 ### License
 
